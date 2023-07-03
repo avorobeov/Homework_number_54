@@ -76,7 +76,6 @@ namespace Homework_number_54
 
         private int _quantityTopPlayer = 3;
 
-
         public Database()
         {
             Fill();
