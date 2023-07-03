@@ -74,6 +74,9 @@ namespace Homework_number_54
     {
         private List<Player> _players = new List<Player>();
 
+        private int _quantityTopPlayer = 3;
+
+
         public Database()
         {
             Fill();
@@ -81,18 +84,14 @@ namespace Homework_number_54
 
         public void ShowTopPlayersByLevel()
         {
-            int quantityTopPlayer = 3;
-
-            List<Player> sortedPlayers = GetTopPlayersByLevel(quantityTopPlayer);
+            List<Player> sortedPlayers = GetTopPlayersByLevel();
 
             ShowPlayers(sortedPlayers);
         }
 
         public void ShowTopPlayersByForce()
         {
-            int quantityTopPlayer = 3;
-
-            List<Player> sortedPlayers = GetTopPlayersByForce(quantityTopPlayer);
+            List<Player> sortedPlayers = GetTopPlayersByForce();
 
             ShowPlayers(sortedPlayers);
         }
@@ -102,14 +101,14 @@ namespace Homework_number_54
             ShowPlayers(_players);
         }
 
-        private List<Player> GetTopPlayersByLevel(int quantityPlayer)
+        private List<Player> GetTopPlayersByLevel()
         {
-            return _players.OrderByDescending(player => player.Level).Take(quantityPlayer).ToList();
+            return _players.OrderByDescending(player => player.Level).Take(_quantityTopPlayer).ToList();
         }
 
-        private List<Player> GetTopPlayersByForce(int quantityPlayer)
+        private List<Player> GetTopPlayersByForce()
         {
-            return _players.OrderByDescending(player => player.Force).Take(quantityPlayer).ToList();
+            return _players.OrderByDescending(player => player.Force).Take(_quantityTopPlayer).ToList();
         }
 
         private void ShowPlayers(List<Player> sortedPlayers)
