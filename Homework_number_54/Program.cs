@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Homework_number_54
 {
@@ -75,7 +73,7 @@ namespace Homework_number_54
     class Database
     {
         private List<Player> _players = new List<Player>();
-      
+
         public Database()
         {
             Fill();
